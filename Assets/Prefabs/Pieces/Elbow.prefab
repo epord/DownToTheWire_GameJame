@@ -123,4 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5255551585676817140}
+  subPieces: []
+  canBeReplaced: 1
+  isAlwaysOn: 0
   isSelected: 0

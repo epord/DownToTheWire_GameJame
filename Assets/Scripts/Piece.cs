@@ -4,13 +4,27 @@ public class Piece : MonoBehaviour
 {
     public GameObject prefab;
 
+    public SubPiece[] subPieces;
+    
+    public bool canBeReplaced = true;
+
     public int rotation { get; set; }
     public bool isSelected = false;
-
+    [HideInInspector]
+    public int col;
+    [HideInInspector]
+    public int row;
+    [HideInInspector]
+    public int rotationCount = 0;
+    
     public void Rotate()
     {
         rotation = (rotation + 90) % 360;
         transform.Rotate(new Vector3(0, 0, 90));
+        foreach (var subPiece in subPieces)
+        {
+            subPiece.Rotate();
+        }
     }
 
     void Update()

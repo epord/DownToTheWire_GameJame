@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1122559821670404258}
   - component: {fileID: 1122559821670404259}
   m_Layer: 0
-  m_Name: Cross
+  m_Name: CrossSub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1122559821670404256}
-  subPieces: []
-  canBeReplaced: 1
-  isAlwaysOn: 0
   isSelected: 0
