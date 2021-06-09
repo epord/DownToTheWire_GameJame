@@ -11,11 +11,11 @@ public class SubPiece : MonoBehaviour
     public bool bottomConnection;
 
     public Sprite blackSprite;
-    public Sprite redSprite;
-    public Sprite greenSprite;
     public Sprite blueSprite;
     public Sprite goldSprite;
-
+    public Sprite greenSprite;
+    public Sprite redSprite;
+    
     public MagicColor magicColor;
     public bool isAlwaysOn;
 

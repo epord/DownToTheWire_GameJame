@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: redSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 55000cd91f3c8c540a4e89e35f188271, type: 3}
+      objectReference: {fileID: 21300000, guid: c4a3966bbafa944448ef02854fcac5a8, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: isAlwaysOn
       value: 1
@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 55000cd91f3c8c540a4e89e35f188271, type: 3}
+      objectReference: {fileID: 21300000, guid: c4a3966bbafa944448ef02854fcac5a8, type: 3}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Enabled
       value: 1

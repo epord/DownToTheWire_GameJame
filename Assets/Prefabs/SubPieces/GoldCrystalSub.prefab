@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4593523204655454795
+--- !u!1001 &7468316541818816295
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,26 +10,30 @@ PrefabInstance:
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: redSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4d3951f4f0eb28144a9f3b6087e312aa, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: blueSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 29adacc204cb0c842a622f710728affc, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: goldSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9dc6f77ba2e5ca34594086a6d318f8fd, type: 3}
+      objectReference: {fileID: 21300000, guid: c8879a8fc5bf9a04d9712c0d37c9731e, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
-      propertyPath: blackSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6d151f01717a57e4291810c75f674606, type: 3}
+      propertyPath: isAlwaysOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
-      propertyPath: greenSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9a56220fef7750f46b10bb77814e7406, type: 3}
+      propertyPath: magicColor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: topConnection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: leftConnection
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: rightConnection
@@ -41,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264596, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Name
-      value: ElbowSub
+      value: GoldCristalSub
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Size.x
@@ -54,19 +58,7 @@ PrefabInstance:
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6d151f01717a57e4291810c75f674606, type: 3}
-    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: c8879a8fc5bf9a04d9712c0d37c9731e, type: 3}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Enabled
       value: 1

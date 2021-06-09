@@ -10,30 +10,34 @@ PrefabInstance:
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: redSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4d3951f4f0eb28144a9f3b6087e312aa, type: 3}
+      objectReference: {fileID: 21300000, guid: d33cdd94da309c243a507b21d6c243a3, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: blueSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 29adacc204cb0c842a622f710728affc, type: 3}
+      objectReference: {fileID: 21300000, guid: 463ebcbd656f6424abc31df097464b27, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: goldSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9dc6f77ba2e5ca34594086a6d318f8fd, type: 3}
+      objectReference: {fileID: 21300000, guid: 70a4c2b245714d043a79264eeed91b69, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: blackSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6d151f01717a57e4291810c75f674606, type: 3}
+      objectReference: {fileID: 21300000, guid: 777f45bf8d581224c8f8f2622c7ceeb1, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: greenSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9a56220fef7750f46b10bb77814e7406, type: 3}
+      objectReference: {fileID: 21300000, guid: d9a4d184a4fbf5043b844b993bc332ae, type: 3}
+    - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: topConnection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: leftConnection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: rightConnection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: bottomConnection
@@ -41,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264596, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Name
-      value: ElbowSub
+      value: Orb
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Size.x
@@ -54,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6d151f01717a57e4291810c75f674606, type: 3}
+      objectReference: {fileID: 21300000, guid: 777f45bf8d581224c8f8f2622c7ceeb1, type: 3}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Color.b
       value: 1

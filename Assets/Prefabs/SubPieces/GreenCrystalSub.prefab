@@ -14,15 +14,19 @@ PrefabInstance:
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: blueSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f5af39bff0534b4eb1216c17abd7bbf, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: isAlwaysOn
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: magicColor
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: greenSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d0f910b5cdb15274f94782345776e073, type: 3}
     - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: topConnection
       value: 1
@@ -41,12 +45,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264596, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Name
-      value: BlueCristalSub 1
+      value: GreenCristalSub
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f5af39bff0534b4eb1216c17abd7bbf, type: 3}
+      objectReference: {fileID: 21300000, guid: d0f910b5cdb15274f94782345776e073, type: 3}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Enabled
       value: 1
