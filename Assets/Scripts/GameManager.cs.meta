@@ -3,7 +3,12 @@ guid: 3c43eaee98b48f54a8af9df4a685276f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blueCrystal: {fileID: 5369949346770831686, guid: b7c7541afcc0ff6429453964ed569d87, type: 3}
+  - goldCrystal: {fileID: 5369949346770831686, guid: 9d1d031e3d39bbd45a8678e567490dcc, type: 3}
+  - greenCrystal: {fileID: 5369949346770831686, guid: ae92acf7178e9334c9dc1771ea111f7e, type: 3}
+  - redCrystal: {fileID: 5369949346770831686, guid: e6143f0332b1aa74f8b63ce6ec54b962, type: 3}
+  - orb: {fileID: 5369949346770831686, guid: 56cf278748b1aac4fa68c6838cd5b73c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

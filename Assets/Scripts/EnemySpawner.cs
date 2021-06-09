@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float minTimeBetweenSpawns = 1f;
-    public float maxTimeBetweenSpawns = 10f;
+    public float minTimeBetweenSpawns = 10f;
+    public float maxTimeBetweenSpawns = 15f;
 
     public Direction spawnDirection = Direction.RIGHT;
 

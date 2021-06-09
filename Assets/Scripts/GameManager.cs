@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     public Piece greenCrystal;
     public Piece redCrystal;
     public Piece orb;
+
+    public float totalLife = 100f;
+    public float damageAmount = 5f;
     
-    // Start is called before the first frame update
-    void Start()
+    public void ReceiveDamage()
     {
-        
+        totalLife -= damageAmount;
     }
 
     // Update is called once per frame

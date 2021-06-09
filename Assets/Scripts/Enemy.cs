@@ -6,11 +6,16 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 0.2f;
     public Direction movingDirection = Direction.RIGHT;
+    public MagicColor color = MagicColor.BLACK;
+    
     private Vector3 movingVector;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
+
         switch (movingDirection)
         {
             case Direction.UP:
@@ -38,5 +43,21 @@ public class Enemy : MonoBehaviour
         // Moving animation
         float rotationAngle = Mathf.Sin(Time.time * 10) * 0.07f;
         transform.Rotate(new Vector3(0, 0, rotationAngle));
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        GameGrid grid = collider.gameObject.GetComponent<GameGrid>() as GameGrid;
+        if (grid != null)
+        {
+            gm.ReceiveDamage();
+            this.Kill();
+        }
+    }
+
+    public void Kill()
+    {
+        // TODO: show a basic animation of hit
+        Destroy(gameObject);
     }
 }
