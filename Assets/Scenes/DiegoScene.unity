@@ -292,6 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c43eaee98b48f54a8af9df4a685276f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blueCrystal: {fileID: 5369949346770831686, guid: b7c7541afcc0ff6429453964ed569d87, type: 3}
+  goldCrystal: {fileID: 5369949346770831686, guid: 9d1d031e3d39bbd45a8678e567490dcc, type: 3}
+  greenCrystal: {fileID: 5369949346770831686, guid: ae92acf7178e9334c9dc1771ea111f7e, type: 3}
+  redCrystal: {fileID: 5369949346770831686, guid: e6143f0332b1aa74f8b63ce6ec54b962, type: 3}
+  orb: {fileID: 5369949346770831686, guid: 56cf278748b1aac4fa68c6838cd5b73c, type: 3}
 --- !u!4 &629700879
 Transform:
   m_ObjectHideFlags: 0
@@ -566,6 +571,7 @@ MonoBehaviour:
   width: 15
   height: 15
   cellWidth: 0.5
+  gameManager: {fileID: 629700878}
 --- !u!4 &1439438146
 Transform:
   m_ObjectHideFlags: 0

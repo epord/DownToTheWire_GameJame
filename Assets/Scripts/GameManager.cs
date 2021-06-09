@@ -6,6 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public Piece selectedPiece { get; set; }
 
+    public Piece blueCrystal;
+    public Piece goldCrystal;
+    public Piece greenCrystal;
+    public Piece redCrystal;
+    public Piece orb;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +43,12 @@ public class GameManager : MonoBehaviour
                 if (selectedPiece != null && grid != null)
                 {
                     Debug.Log("Selected the grid");
-                    grid.AddPieceAt(selectedPiece, mousePos2D);
-                    selectedPiece.isSelected = false;
-                    selectedPiece = null;
+                    bool addedPiece = grid.AddPieceAt(selectedPiece, mousePos2D);
+                    if (addedPiece)
+                    {
+                        selectedPiece.isSelected = false;
+                        selectedPiece = null;
+                    }
                 }
             }
         }

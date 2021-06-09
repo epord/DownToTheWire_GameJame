@@ -9,6 +9,8 @@ public class GameGrid : MonoBehaviour
     public float cellWidth = 0.5f;
     private Cell[] cells;
 
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,39 @@ public class GameGrid : MonoBehaviour
         BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(width*cellWidth, height*cellWidth);
         boxCollider2D.offset = boxCollider2D.size / 2;
+        InitializeGrid();
+    }
 
+    private void InitializeGrid()
+    {
+        AddPieceAt(Instantiate(gameManager.blueCrystal), 4, 7);
+        AddPieceAt(Instantiate(gameManager.goldCrystal), 10, 7);
+        AddPieceAt(Instantiate(gameManager.greenCrystal), 7, 4);
+        AddPieceAt(Instantiate(gameManager.redCrystal), 7, 10);
+        AddPieceAt(InstantiateOrb(1), 0, 1);
+        AddPieceAt(InstantiateOrb(1), 0, 5);
+        AddPieceAt(InstantiateOrb(1), 0, 9);
+        AddPieceAt(InstantiateOrb(1), 0, 13);
+        AddPieceAt(InstantiateOrb(3), 14, 1);
+        AddPieceAt(InstantiateOrb(3), 14, 5);
+        AddPieceAt(InstantiateOrb(3), 14, 9);
+        AddPieceAt(InstantiateOrb(3), 14, 13);
+        AddPieceAt(InstantiateOrb(0), 3, 14);
+        AddPieceAt(InstantiateOrb(0), 7, 14);
+        AddPieceAt(InstantiateOrb(0), 11, 14);
+        AddPieceAt(InstantiateOrb(2), 3, 0);
+        AddPieceAt(InstantiateOrb(2), 7, 0);
+        AddPieceAt(InstantiateOrb(2), 11, 0);
+    }
+
+    private Piece InstantiateOrb(int rotationCount)
+    {
+        Piece orb = Instantiate(gameManager.orb);
+        for (int i = 0; i < rotationCount; i++)
+        {
+            orb.Rotate();
+        }
+        return orb;
     }
 
     public Cell GetCellAt(int row, int col)
@@ -42,12 +76,16 @@ public class GameGrid : MonoBehaviour
         );
     }
 
-    public void AddPieceAt(Piece piece, int row, int col)
+    public bool AddPieceAt(Piece piece, int row, int col)
     {
         Cell cell = GetCellAt(row, col);
-        if (cell == null) return;
+        if (cell == null) return false;
         if (cell.piece != null)
         {
+            if (!cell.piece.canBeReplaced)
+            {
+                return false;
+            }
             Destroy(cell.piece.gameObject);
         }
         piece.col = col;
@@ -56,13 +94,14 @@ public class GameGrid : MonoBehaviour
         Vector3 cellWorldPosition = transform.TransformPoint(new Vector3(row * cellWidth + 0.5f * cellWidth, col * cellWidth + 0.5f * cellWidth, 0));
         piece.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, 1); // Set z as 1 so pieces are behind the grid  and aren't clickable anymore
         UpdateGridColors();
+        return true;
     }
 
     // Finds Cell containing worldPoint and adds the piece to that Cell
-    public void AddPieceAt(Piece piece, Vector2 worldPoint)
+    public bool AddPieceAt(Piece piece, Vector2 worldPoint)
     {
         Vector2Int cellCoordinates = GetCellCoordinatesFromWorldPosition(worldPoint);
-        AddPieceAt(piece, cellCoordinates.x, cellCoordinates.y);
+        return AddPieceAt(piece, cellCoordinates.x, cellCoordinates.y);
     }
     
     // Updates all the cells so that all the subpieces have their correspondent colors
