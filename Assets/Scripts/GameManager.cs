@@ -14,10 +14,18 @@ public class GameManager : MonoBehaviour
 
     public float totalLife = 100f;
     public float damageAmount = 5f;
-    
+
+    private HealthBar healthBar;
+
+    private void Start()
+    {
+        healthBar = FindObjectOfType<HealthBar>();
+    }
+
     public void ReceiveDamage()
     {
         totalLife -= damageAmount;
+        healthBar.SetHealth(totalLife);
     }
 
     // Update is called once per frame
