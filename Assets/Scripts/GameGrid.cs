@@ -104,6 +104,36 @@ public class GameGrid : MonoBehaviour
         return AddPieceAt(piece, cellCoordinates.y, cellCoordinates.x);
     }
     
+    // Finds Cell containing worldPoint and adds the superPiece to that group of Cells
+    public bool AddSuperPieceAt(SuperPiece superPiece, Vector2 worldPoint)
+    {
+        // Calculate the cell in the bottomLeftCorner
+        Vector2 bottomLeftCellPoint = new Vector2(worldPoint.x - cellWidth / 2, worldPoint.y - cellWidth / 2);
+        Vector2Int cellCoordinates = GetCellCoordinatesFromWorldPosition(bottomLeftCellPoint);
+        Cell[] cells = new[]
+        {
+            GetCellAt(cellCoordinates.y, cellCoordinates.x),
+            GetCellAt(cellCoordinates.y + 1, cellCoordinates.x),
+            GetCellAt(cellCoordinates.y, cellCoordinates.x + 1),
+            GetCellAt(cellCoordinates.y + 1, cellCoordinates.x + 1)
+        };
+        foreach (var cell in cells)
+        {
+            if (cell == null) return false;
+            if (cell.piece != null && !cell.piece.canBeReplaced) return false;
+        }
+        foreach (var piece in superPiece.Pieces())
+        {
+            piece.transform.parent = null;
+        }
+        AddPieceAt(superPiece.bottomLeftPiece, cellCoordinates.y, cellCoordinates.x);
+        AddPieceAt(superPiece.bottomRightPiece, cellCoordinates.y, cellCoordinates.x + 1);
+        AddPieceAt(superPiece.topLeftPiece, cellCoordinates.y + 1, cellCoordinates.x);
+        AddPieceAt(superPiece.topRightPiece, cellCoordinates.y + 1, cellCoordinates.x + 1);
+        Destroy(superPiece.gameObject);
+        return true;
+    }
+    
     // Updates all the cells so that all the subpieces have their correspondent colors
     public void UpdateGridColors()
     {

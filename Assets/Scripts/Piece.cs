@@ -14,8 +14,6 @@ public class Piece : MonoBehaviour
     public int col;
     [HideInInspector]
     public int row;
-    [HideInInspector]
-    public int rotationCount = 0;
     
     public void Rotate()
     {
