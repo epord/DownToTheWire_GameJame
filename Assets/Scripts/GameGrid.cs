@@ -23,15 +23,15 @@ public class GameGrid : MonoBehaviour
         BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(width*cellWidth, height*cellWidth);
         boxCollider2D.offset = boxCollider2D.size / 2;
-        InitializeGrid();
+       // InitializeGrid();
     }
 
     private void InitializeGrid()
     {
-        AddPieceAt(Instantiate(gameManager.blueCrystal), 4, 7);
-        AddPieceAt(Instantiate(gameManager.goldCrystal), 10, 7);
-        AddPieceAt(Instantiate(gameManager.greenCrystal), 7, 4);
-        AddPieceAt(Instantiate(gameManager.redCrystal), 7, 10);
+        AddPieceAt(Instantiate(gameManager.blueCrystal), 3, 10);
+        AddPieceAt(Instantiate(gameManager.goldCrystal), 7, 10);
+        AddPieceAt(Instantiate(gameManager.greenCrystal), 5, 8);
+        AddPieceAt(Instantiate(gameManager.redCrystal), 5, 12);
         AddPieceAt(InstantiateOrb(1), 0, 1);
         AddPieceAt(InstantiateOrb(1), 0, 5);
         AddPieceAt(InstantiateOrb(1), 0, 9);
@@ -91,7 +91,7 @@ public class GameGrid : MonoBehaviour
         piece.col = col;
         piece.row = row;
         cell.piece = piece;
-        Vector3 cellWorldPosition = transform.TransformPoint(new Vector3(row * cellWidth + 0.5f * cellWidth, col * cellWidth + 0.5f * cellWidth, 0));
+        Vector3 cellWorldPosition = transform.TransformPoint(new Vector3(col * cellWidth + 0.5f * cellWidth, row * cellWidth + 0.5f * cellWidth, 0));
         piece.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, 1); // Set z as 1 so pieces are behind the grid  and aren't clickable anymore
         UpdateGridColors();
         return true;
@@ -101,7 +101,7 @@ public class GameGrid : MonoBehaviour
     public bool AddPieceAt(Piece piece, Vector2 worldPoint)
     {
         Vector2Int cellCoordinates = GetCellCoordinatesFromWorldPosition(worldPoint);
-        return AddPieceAt(piece, cellCoordinates.x, cellCoordinates.y);
+        return AddPieceAt(piece, cellCoordinates.y, cellCoordinates.x);
     }
     
     // Updates all the cells so that all the subpieces have their correspondent colors
@@ -143,22 +143,22 @@ public class GameGrid : MonoBehaviour
             SubPiece currentSubPiece = toColorQ.Dequeue();
             if (currentSubPiece.rightConnection)
             {
-                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row+1, currentSubPiece.parentPiece.col);
+                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row, currentSubPiece.parentPiece.col + 1);
                 CheckIfColorCell(currentSubPiece, toColorQ, checkCell, (subPiece => subPiece.leftConnection));
             }
             if (currentSubPiece.leftConnection)
             {
-                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row-1, currentSubPiece.parentPiece.col);
+                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row, currentSubPiece.parentPiece.col - 1);
                 CheckIfColorCell(currentSubPiece, toColorQ, checkCell, (subPiece => subPiece.rightConnection));
             }
             if (currentSubPiece.topConnection)
             {
-                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row, currentSubPiece.parentPiece.col + 1);
+                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row + 1, currentSubPiece.parentPiece.col);
                 CheckIfColorCell(currentSubPiece, toColorQ, checkCell, (subPiece => subPiece.bottomConnection));
             }
             if (currentSubPiece.bottomConnection)
             {
-                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row, currentSubPiece.parentPiece.col - 1);
+                Cell checkCell = GetCellAt(currentSubPiece.parentPiece.row - 1, currentSubPiece.parentPiece.col);
                 CheckIfColorCell(currentSubPiece, toColorQ, checkCell, (subPiece => subPiece.topConnection));
             }
         }
