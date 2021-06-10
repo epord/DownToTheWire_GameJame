@@ -23,29 +23,29 @@ public class GameGrid : MonoBehaviour
         BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
         boxCollider2D.size = new Vector2(width*cellWidth, height*cellWidth);
         boxCollider2D.offset = boxCollider2D.size / 2;
-       // InitializeGrid();
+        InitializeGrid();
     }
 
     private void InitializeGrid()
     {
-        AddPieceAt(Instantiate(gameManager.blueCrystal), 3, 10);
-        AddPieceAt(Instantiate(gameManager.goldCrystal), 7, 10);
-        AddPieceAt(Instantiate(gameManager.greenCrystal), 5, 8);
-        AddPieceAt(Instantiate(gameManager.redCrystal), 5, 12);
-        AddPieceAt(InstantiateOrb(1), 0, 1);
-        AddPieceAt(InstantiateOrb(1), 0, 5);
-        AddPieceAt(InstantiateOrb(1), 0, 9);
-        AddPieceAt(InstantiateOrb(1), 0, 13);
-        AddPieceAt(InstantiateOrb(3), 14, 1);
-        AddPieceAt(InstantiateOrb(3), 14, 5);
-        AddPieceAt(InstantiateOrb(3), 14, 9);
-        AddPieceAt(InstantiateOrb(3), 14, 13);
-        AddPieceAt(InstantiateOrb(0), 3, 14);
-        AddPieceAt(InstantiateOrb(0), 7, 14);
-        AddPieceAt(InstantiateOrb(0), 11, 14);
-        AddPieceAt(InstantiateOrb(2), 3, 0);
-        AddPieceAt(InstantiateOrb(2), 7, 0);
-        AddPieceAt(InstantiateOrb(2), 11, 0);
+        AddPieceAt(Instantiate(gameManager.blueCrystal), 4, 10);
+        AddPieceAt(Instantiate(gameManager.goldCrystal), 2, 8);
+        AddPieceAt(Instantiate(gameManager.greenCrystal), 4, 6);
+        AddPieceAt(Instantiate(gameManager.redCrystal), 6, 8);
+
+        AddPieceAt(InstantiateOrb(1), 0, 0);
+        AddPieceAt(InstantiateOrb(1), 3, 0);
+        AddPieceAt(InstantiateOrb(1), 6, 0);
+        AddPieceAt(InstantiateOrb(1), 9, 0);
+        AddPieceAt(InstantiateOrb(3), 0, 16);
+        AddPieceAt(InstantiateOrb(3), 3, 16);
+        AddPieceAt(InstantiateOrb(3), 6, 16);
+        AddPieceAt(InstantiateOrb(3), 9, 16);
+        AddPieceAt(InstantiateOrb(0), 10, 2);
+        AddPieceAt(InstantiateOrb(0), 10, 5);
+        AddPieceAt(InstantiateOrb(0), 10, 8);
+        AddPieceAt(InstantiateOrb(0), 10, 11);
+        AddPieceAt(InstantiateOrb(0), 10, 14);
     }
 
     private Piece InstantiateOrb(int rotationCount)
