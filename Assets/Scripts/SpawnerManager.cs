@@ -147,7 +147,7 @@ public class SpawnerManager : MonoBehaviour
         int listSelector = Random.Range(1, 5);
         if (listSelector == 1) return redEnemyPrefab;
         else if (listSelector == 2) return greenEnemyPrefab;
-        else if (listSelector == 2) return greenEnemyPrefab;
+        else if (listSelector == 3) return goldEnemyPrefab;
         else return blueEnemyPrefab;
     }
 
