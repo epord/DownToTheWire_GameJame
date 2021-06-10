@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 0.2f;
     public Direction movingDirection = Direction.RIGHT;
     public MagicColor color = MagicColor.BLACK;
+    public float speed = 0.2f;
     
     private Vector3 movingVector;
     private GameManager gm;

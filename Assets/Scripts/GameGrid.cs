@@ -60,7 +60,7 @@ public class GameGrid : MonoBehaviour
 
     public Cell GetCellAt(int row, int col)
     {
-        if (row < 0 || row > height || col < 0 || col > width)
+        if (row < 0 || row >= height || col < 0 || col >= width)
         {
             return null;
         }

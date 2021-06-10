@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public float minTimeBetweenSpawns = 10f;
     public float maxTimeBetweenSpawns = 15f;
+    public float enemySpeed = 0.12f;
 
     public Direction spawnDirection = Direction.RIGHT;
 
@@ -22,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnCoroutine());
+        //StartCoroutine(SpawnCoroutine());
     }
 
     IEnumerator SpawnCoroutine()
@@ -53,9 +54,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy(Enemy enemyPrefab)
+    public void SpawnEnemy(Enemy enemyPrefab)
     {
         Enemy enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
+        enemy.speed = enemySpeed;
         enemy.movingDirection = spawnDirection;
     }
 }

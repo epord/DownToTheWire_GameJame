@@ -32,6 +32,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Time.timeScale = 30;
+        } else
+        {
+            Time.timeScale = 1;
+        }
+
+
         // Left click
         if (Input.GetMouseButtonDown(0))
         {
