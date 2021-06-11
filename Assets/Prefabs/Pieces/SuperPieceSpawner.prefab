@@ -106,4 +106,4 @@ MonoBehaviour:
   - {fileID: 5369949346770831685, guid: 18071c199541ad04c80cc1f5b903b73b, type: 3}
   - {fileID: 5369949346770831685, guid: 985353cb594521e4b813c612b28f6f18, type: 3}
   timer: 5
-  waitTime: 3
+  waitTime: 2
