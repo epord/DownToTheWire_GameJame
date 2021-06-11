@@ -91,6 +91,10 @@ public class GameGrid : MonoBehaviour
         piece.col = col;
         piece.row = row;
         cell.piece = piece;
+        foreach (var pieceSubPiece in cell.piece.subPieces)
+        {
+            pieceSubPiece.spriteRenderer.sortingOrder = pieceSubPiece.shouldRenderInFront ? 1 : 0;
+        }
         Vector3 cellWorldPosition = transform.TransformPoint(new Vector3(col * cellWidth + 0.5f * cellWidth, row * cellWidth + 0.5f * cellWidth, 0));
         piece.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, 1); // Set z as 1 so pieces are behind the grid  and aren't clickable anymore
         UpdateGridColors();

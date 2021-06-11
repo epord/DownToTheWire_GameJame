@@ -69,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 645778907
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,10 +99,13 @@ MonoBehaviour:
   rightConnection: 0
   topConnection: 0
   bottomConnection: 0
+  shouldRenderInFront: 0
   blackSprite: {fileID: 0}
-  redSprite: {fileID: 0}
-  greenSprite: {fileID: 0}
   blueSprite: {fileID: 0}
   goldSprite: {fileID: 0}
+  greenSprite: {fileID: 0}
+  redSprite: {fileID: 0}
   magicColor: 0
+  isAlwaysOn: 0
+  parentPiece: {fileID: 0}
   spriteRenderer: {fileID: 4663355512647264599}

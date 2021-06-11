@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: bottomConnection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 18399020776001230, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: shouldRenderInFront
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264596, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Name
       value: Bridge
@@ -74,6 +78,18 @@ PrefabInstance:
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 645778907
       objectReference: {fileID: 0}
     - target: {fileID: 4663355512647264599, guid: 4f6119eccceb8c643b8722c1bc967e04, type: 3}
       propertyPath: m_WasSpriteAssigned

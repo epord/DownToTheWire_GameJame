@@ -77,6 +77,14 @@ public class GameManager : MonoBehaviour
                     superPiece.spawner.PieceSelected();
                     superPiece.isSelected = true;
                     selectedSuperPiece = superPiece;
+                    superPiece.spriteRenderer.sortingOrder = 5;
+                    foreach (var pieceInSuperPiece in superPiece.Pieces())
+                    {
+                        foreach (var subPieceInSuperPiece in pieceInSuperPiece.subPieces)
+                        {
+                            subPieceInSuperPiece.spriteRenderer.sortingOrder = 6;
+                        }
+                    }
                 }
                 if (selectedSuperPiece != null && grid != null)
                 {

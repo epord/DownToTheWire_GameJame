@@ -10,6 +10,8 @@ public class SubPiece : MonoBehaviour
     public bool topConnection;
     public bool bottomConnection;
 
+    public bool shouldRenderInFront;
+
     public Sprite blackSprite;
     public Sprite blueSprite;
     public Sprite goldSprite;

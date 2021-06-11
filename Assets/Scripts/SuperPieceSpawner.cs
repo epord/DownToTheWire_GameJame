@@ -35,36 +35,41 @@ public class SuperPieceSpawner : MonoBehaviour
         if(superPiece is null) Debug.LogException(new Exception());
 
         Vector3 spawnerPosition = this.transform.position;
-        newSuperPieceObject.transform.position = new Vector3(spawnerPosition.x, spawnerPosition.y, spawnerPosition.z - 2);
-        
-        GameObject bottomLeftPieceObject = Instantiate(spawnablePieces[Random.Range(0, spawnablePieces.Length)]);
-        Piece bottomLeftPiece = bottomLeftPieceObject.GetComponent(typeof(Piece)) as Piece;
-        if(bottomLeftPiece is null) Debug.LogException(new Exception());
+        newSuperPieceObject.transform.position = spawnerPosition;
+
+        Piece bottomLeftPiece = GenerateRandomPiece();
         superPiece.bottomLeftPiece = bottomLeftPiece;
         bottomLeftPiece.transform.parent = superPiece.transform;
-        bottomLeftPiece.transform.position = new Vector3(spawnerPosition.x - 0.5f * grid.cellWidth, spawnerPosition.y - 0.5f * grid.cellWidth, spawnerPosition.z - 1);
+        bottomLeftPiece.transform.position = new Vector3(spawnerPosition.x - 0.5f * grid.cellWidth, spawnerPosition.y - 0.5f * grid.cellWidth, spawnerPosition.z);
         
-        GameObject bottomRightPieceObject = Instantiate(spawnablePieces[Random.Range(0, spawnablePieces.Length)]);
-        Piece bottomRightPiece = bottomRightPieceObject.GetComponent(typeof(Piece)) as Piece;
-        if(bottomRightPiece is null) Debug.LogException(new Exception());
+        Piece bottomRightPiece = GenerateRandomPiece();
         superPiece.bottomRightPiece = bottomRightPiece;
         bottomRightPiece.transform.parent = superPiece.transform;
-        bottomRightPiece.transform.position = new Vector3(spawnerPosition.x + 0.5f * grid.cellWidth, spawnerPosition.y - 0.5f * grid.cellWidth, spawnerPosition.z - 1);
+        bottomRightPiece.transform.position = new Vector3(spawnerPosition.x + 0.5f * grid.cellWidth, spawnerPosition.y - 0.5f * grid.cellWidth, spawnerPosition.z);
         
-        GameObject topLeftPieceObject = Instantiate(spawnablePieces[Random.Range(0, spawnablePieces.Length)]);
-        Piece topLeftPiece = topLeftPieceObject.GetComponent(typeof(Piece)) as Piece;
-        if(topLeftPiece is null) Debug.LogException(new Exception());
+        Piece topLeftPiece = GenerateRandomPiece();
         superPiece.topLeftPiece = topLeftPiece;
         topLeftPiece.transform.parent = superPiece.transform;
-        topLeftPiece.transform.position = new Vector3(spawnerPosition.x - 0.5f * grid.cellWidth, spawnerPosition.y + 0.5f * grid.cellWidth, spawnerPosition.z - 1);
+        topLeftPiece.transform.position = new Vector3(spawnerPosition.x - 0.5f * grid.cellWidth, spawnerPosition.y + 0.5f * grid.cellWidth, spawnerPosition.z);
         
-        GameObject topRightPieceObject = Instantiate(spawnablePieces[Random.Range(0, spawnablePieces.Length)]);
-        Piece topRightPiece = topRightPieceObject.GetComponent(typeof(Piece)) as Piece;
-        if(topRightPiece is null) Debug.LogException(new Exception());
+        Piece topRightPiece = GenerateRandomPiece();
         superPiece.topRightPiece = topRightPiece;
         topRightPiece.transform.parent = superPiece.transform;
-        topRightPiece.transform.position = new Vector3(spawnerPosition.x + 0.5f * grid.cellWidth, spawnerPosition.y + 0.5f * grid.cellWidth, spawnerPosition.z - 1);
+        topRightPiece.transform.position = new Vector3(spawnerPosition.x + 0.5f * grid.cellWidth, spawnerPosition.y + 0.5f * grid.cellWidth, spawnerPosition.z);
         
         superPiece.spawner = this;
+    }
+
+    private Piece GenerateRandomPiece()
+    {
+        GameObject pieceObject = Instantiate(spawnablePieces[Random.Range(0, spawnablePieces.Length)]);
+        Piece piece = pieceObject.GetComponent(typeof(Piece)) as Piece;
+        if(piece is null) Debug.LogException(new Exception());
+        int rotation = Random.Range(0, 4);
+        for (int i = 0; i < rotation; i++)
+        {
+            piece.Rotate();
+        }
+        return piece;
     }
 }

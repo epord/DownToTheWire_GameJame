@@ -9,6 +9,8 @@ public class SuperPiece : MonoBehaviour
 
     public SuperPieceSpawner spawner;
     
+    public SpriteRenderer spriteRenderer;
+    
     public int rotation { get; set; }
     public bool isSelected = false;
 
@@ -22,13 +24,13 @@ public class SuperPiece : MonoBehaviour
     {
         Piece oldTopLeftPiece = topLeftPiece;
         topLeftPiece = topRightPiece;
-        topLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 1);
+        topLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 0);
         topRightPiece = bottomRightPiece;
-        topRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 1);
+        topRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 0);
         bottomRightPiece = bottomLeftPiece;
-        bottomRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 1);
+        bottomRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 0);
         bottomLeftPiece = oldTopLeftPiece;
-        bottomLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 1);
+        bottomLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 0);
         foreach (var piece in Pieces())
         {
             piece.Rotate();
