@@ -33,4 +33,20 @@ public class Piece : MonoBehaviour
             gameObject.transform.position = new Vector3(worldMousePosition.x, worldMousePosition.y, 0);
         }
     }
+
+    public bool[] GetConnections()
+    {
+        bool topConnected = false;
+        bool rightConnected = false;
+        bool bottomConnected = false;
+        bool leftConnected = false;
+        foreach (var subPiece in subPieces)
+        {
+            if (subPiece.topConnection) topConnected = true;
+            if (subPiece.rightConnection) rightConnected = true;
+            if (subPiece.bottomConnection) bottomConnected = true;
+            if (subPiece.leftConnection) leftConnected = true;
+        }
+        return new[] {topConnected, rightConnected, bottomConnected, leftConnected};
+    }
 }
