@@ -22,15 +22,17 @@ public class SuperPiece : MonoBehaviour
     
     public void Rotate()
     {
+        Vector3 oldTopLeftPosition = topLeftPiece.transform.position;
+        topLeftPiece.transform.position = bottomLeftPiece.transform.position;
+        bottomLeftPiece.transform.position = bottomRightPiece.transform.position;
+        bottomRightPiece.transform.position = topRightPiece.transform.position;
+        topRightPiece.transform.position = oldTopLeftPosition;
+        
         Piece oldTopLeftPiece = topLeftPiece;
         topLeftPiece = topRightPiece;
-        topLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 0);
         topRightPiece = bottomRightPiece;
-        topRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, spawner.grid.cellWidth/2, 0);
         bottomRightPiece = bottomLeftPiece;
-        bottomRightPiece.transform.localPosition = new Vector3(spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 0);
         bottomLeftPiece = oldTopLeftPiece;
-        bottomLeftPiece.transform.localPosition = new Vector3(-spawner.grid.cellWidth/2, -spawner.grid.cellWidth/2, 0);
         foreach (var piece in Pieces())
         {
             piece.Rotate();
