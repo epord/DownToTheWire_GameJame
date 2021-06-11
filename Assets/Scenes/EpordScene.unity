@@ -1223,8 +1223,8 @@ MonoBehaviour:
   greenCrystal: {fileID: 5369949346770831686, guid: ae92acf7178e9334c9dc1771ea111f7e, type: 3}
   redCrystal: {fileID: 5369949346770831686, guid: e6143f0332b1aa74f8b63ce6ec54b962, type: 3}
   orb: {fileID: 5369949346770831686, guid: 56cf278748b1aac4fa68c6838cd5b73c, type: 3}
-  totalLife: 1000000
-  damageAmount: 5
+  totalLife: 100
+  damageAmount: 20
   rewindStart: {fileID: 629700882}
   rewindLoop: {fileID: 629700881}
   rewindEnd: {fileID: 629700880}
