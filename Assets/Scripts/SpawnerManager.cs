@@ -28,41 +28,40 @@ public class SpawnerManager : MonoBehaviour
         Stage1();
 
         // two red top-center
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(42);
         Stage2();
 
         // green top-left and red top-right
-        yield return new WaitForSeconds(65);
+        yield return new WaitForSeconds(42);
         Stage3();
 
         // green left-top
-        yield return new WaitForSeconds(55);
+        yield return new WaitForSeconds(42);
         Stage4();
 
         // blue right-top
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(38);
         Stage5();
 
         // blue top-right
-        yield return new WaitForSeconds(55);
+        yield return new WaitForSeconds(38);
         Stage6();
 
         // gold right bottom
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(38);
         Stage7();
 
         // red left-top
-        yield return new WaitForSeconds(65);
+        yield return new WaitForSeconds(38);
         Stage8();
 
         // red left-center and green top-right
-        yield return new WaitForSeconds(70);
+        yield return new WaitForSeconds(38);
         Stage9();
 
         // == END TUTORIAL ==
 
         // start automatic spawn
-        yield return new WaitForSeconds(2);
         StartCoroutine(SpawnAutomatically());
     }
 
@@ -156,24 +155,24 @@ public class SpawnerManager : MonoBehaviour
         float automaticModeStartTime = Time.time;
         while (true)
         {
-            if (Time.time - automaticModeStartTime < 300)
+            if (Time.time - automaticModeStartTime < 120)
             {
-                yield return new WaitForSeconds(Random.Range(45, 60));
+                yield return new WaitForSeconds(Random.Range(38, 42));
             }
-            if (Time.time - automaticModeStartTime < 600)
+            else if (Time.time - automaticModeStartTime < 220)
             {
-                yield return new WaitForSeconds(Random.Range(45, 65));
+                yield return new WaitForSeconds(Random.Range(33, 38));
             } else
             {
-                yield return new WaitForSeconds(Random.Range(55, 70));
+                yield return new WaitForSeconds(Random.Range(28, 33));
             }
 
             int max = 2;
-            if (Time.time - automaticModeStartTime > 300)
+            if (Time.time - automaticModeStartTime > 120)
             {
                 max = 3; // Increase after 5 minutes
             }
-            if (Time.time - automaticModeStartTime > 600)
+            if (Time.time - automaticModeStartTime > 220)
             {
                 max = 4; // Increase after 10 minutes
             }
