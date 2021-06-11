@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -23,13 +24,23 @@ public class GameManager : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource gameOver;
 
+    public Text score;
+
     private HealthBar healthBar;
     private SoundManager sm;
+    private int killCount;
+    private bool isGameOver = false;
 
     private void Start()
     {
         healthBar = FindObjectOfType<HealthBar>();
         sm = FindObjectOfType<SoundManager>();
+    }
+
+    public void IncreaseKillCount()
+    {
+        killCount++;
+        score.text = killCount.ToString();
     }
 
     public void ReceiveDamage()
@@ -45,25 +56,31 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        isGameOver = true;
+        rewindLoop.Stop();
         backgroundMusic.Stop();
         gameOver.Play();
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         yield return new WaitForSeconds(2);
         Time.timeScale = 1;
+        PlayerPrefs.SetInt("score", killCount);
         SceneManager.LoadScene("End");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (!isGameOver)
         {
-            Time.timeScale = 30;
-            if (!rewindLoop.isPlaying) rewindLoop.Play();
-        } else
-        {
-            Time.timeScale = 1;
-            rewindLoop.Stop();
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Time.timeScale = 30;
+                if (!rewindLoop.isPlaying) rewindLoop.Play();
+            } else
+            {
+                Time.timeScale = 1;
+                rewindLoop.Stop();
+            }
         }
 
 
