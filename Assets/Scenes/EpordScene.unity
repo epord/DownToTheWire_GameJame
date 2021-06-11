@@ -1228,6 +1228,8 @@ MonoBehaviour:
   rewindStart: {fileID: 629700882}
   rewindLoop: {fileID: 629700881}
   rewindEnd: {fileID: 629700880}
+  backgroundMusic: {fileID: 629700883}
+  gameOver: {fileID: 629700884}
 --- !u!4 &629700879
 Transform:
   m_ObjectHideFlags: 0
@@ -1544,7 +1546,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1633,11 +1635,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629700877}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 60298f7b332f4504bb2cf2d14a60f798, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: efa4daeaca7d32b488fe0bbc8bae6fd6, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0

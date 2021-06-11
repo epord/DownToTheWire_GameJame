@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     public AudioSource rewindStart;
     public AudioSource rewindLoop;
     public AudioSource rewindEnd;
+    public AudioSource backgroundMusic;
+    public AudioSource gameOver;
 
     private HealthBar healthBar;
     private SoundManager sm;
@@ -33,6 +36,21 @@ public class GameManager : MonoBehaviour
     {
         totalLife -= damageAmount;
         healthBar.SetHealth(totalLife);
+
+        if (totalLife <= 0)
+        {
+            StartCoroutine(GameOver());
+        }
+    }
+
+    IEnumerator GameOver()
+    {
+        backgroundMusic.Stop();
+        gameOver.Play();
+        Time.timeScale = 0;
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("End");
     }
 
     // Update is called once per frame
