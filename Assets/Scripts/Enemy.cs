@@ -7,14 +7,20 @@ public class Enemy : MonoBehaviour
     public Direction movingDirection = Direction.RIGHT;
     public MagicColor color = MagicColor.BLACK;
     public float speed = 0.2f;
-    
+
+    public AudioSource monster1;
+    public AudioSource monster2;
+    public AudioSource monster3;
+
     private Vector3 movingVector;
     private GameManager gm;
+    private SoundManager sm;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        sm = FindObjectOfType<SoundManager>();
 
         switch (movingDirection)
         {
@@ -52,6 +58,11 @@ public class Enemy : MonoBehaviour
         {
             gm.ReceiveDamage();
             this.Kill();
+
+            int soundId = Random.Range(1, 4);
+            if (soundId == 1) sm.PlayMonster1();
+            else if (soundId == 2) sm.PlayMonster2();
+            else sm.PlayMonster3();
         }
     }
 

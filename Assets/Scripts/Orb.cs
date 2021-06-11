@@ -8,11 +8,13 @@ public class Orb : MonoBehaviour
     public Material laserMaterial;
 
     private Piece piece;
+    private AudioSource laserSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        piece = transform.parent.gameObject.GetComponent<Piece>();   
+        piece = transform.parent.gameObject.GetComponent<Piece>();
+        laserSound = transform.parent.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class Orb : MonoBehaviour
         line.useWorldSpace = true;
 
         enemy.Kill();
+        laserSound.Play();
         yield return new WaitForSeconds(0.5f);
         Destroy(line);
     }

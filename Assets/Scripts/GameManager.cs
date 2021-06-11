@@ -16,11 +16,17 @@ public class GameManager : MonoBehaviour
     public float totalLife = 100f;
     public float damageAmount = 5f;
 
+    public AudioSource rewindStart;
+    public AudioSource rewindLoop;
+    public AudioSource rewindEnd;
+
     private HealthBar healthBar;
+    private SoundManager sm;
 
     private void Start()
     {
         healthBar = FindObjectOfType<HealthBar>();
+        sm = FindObjectOfType<SoundManager>();
     }
 
     public void ReceiveDamage()
@@ -35,9 +41,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Time.timeScale = 30;
+            if (!rewindLoop.isPlaying) rewindLoop.Play();
         } else
         {
             Time.timeScale = 1;
+            rewindLoop.Stop();
         }
 
 
@@ -67,6 +75,7 @@ public class GameManager : MonoBehaviour
                     bool addedPiece = grid.AddPieceAt(selectedPiece, mousePos2D);
                     if (addedPiece)
                     {
+                        sm.PlayReleasePiece();
                         selectedPiece.isSelected = false;
                         selectedPiece = null;
                     }
@@ -92,6 +101,7 @@ public class GameManager : MonoBehaviour
                     bool addedPiece = grid.AddSuperPieceAt(selectedSuperPiece, mousePos2D);
                     if (addedPiece)
                     {
+                        sm.PlayReleasePiece();
                         selectedSuperPiece.isSelected = false;
                         selectedSuperPiece = null;
                     }
